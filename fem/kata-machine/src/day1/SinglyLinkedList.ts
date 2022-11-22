@@ -11,21 +11,20 @@ export default class SinglyLinkedList<T> {
     constructor(value: T) {
         this.length = 0;
         this.head = new Node(value);
-        
     }
 
     prepend(item: T): void {
 
-}
+    }
     insertAt(item: T, idx: number): void {
 
-}
+    }
     append(item: T): void {
 
-}
+    }
     remove(item: T): T | undefined {
 
-}
+    }
     get(idx: number): T | undefined {
         
         let curr = this.head;

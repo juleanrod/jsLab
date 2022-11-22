@@ -25,8 +25,3 @@ const factorialOf6 = factorial(6);
 
 console.log(factorialOf6);
 
-function test() {
-    moveTo(\ev, y)
-    console.log()
-}
-
