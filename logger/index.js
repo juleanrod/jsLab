@@ -7,9 +7,22 @@ const myEvent = new MyEmitter();
 
 myEvent.on('log', (msg) => logEvent(msg));
 
-for(let i = 0; i < 10; i++) {
-    setTimeout(() => {
-        myEvent.emit('log', `Event ${i}`)
-    }, 2000);
+async function* events() {
+    yield 1;
+    yield 2;
+    yield 3;
+    yield 4;
+    yield 5;
 }
 
+(async () => {
+  for await (const num of events()) {
+    await new Promise((resolve) =>
+      setTimeout(() => {
+        myEvent.emit("log", `Event ${num}`);
+        console.log("Event logged");
+        resolve();
+      }, 2000)
+    );
+  }
+})();
